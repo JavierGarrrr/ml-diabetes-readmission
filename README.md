@@ -1,2 +1,2 @@
 # ml-diabetes-readmission
-Diabetes Readmission project
+Diabetes Readmission project comparing the effectiveness of Random Forest, SVM, Logistic Regression and XGBoost in predicting likelihood of readmission for diabetic patients
