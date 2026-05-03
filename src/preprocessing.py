@@ -56,13 +56,18 @@ def fill_unknown(df, col_name):
 
 def remove_duplicates(df):
     df = df.sort_values("encounter_id")
-    df = df.drop_duplicates("patient_nb", keep = "first")
+    df = df.drop_duplicates("patient_nbr", keep = "first")
     return df
 
 def remove_discharge_records(df):
     removal_ids = [11,13,14,19,20,21]
     mask = df["discharge_disposition_id"].isin(removal_ids)
     df = df[~mask]
+    return df
+
+def drop_id_columns(df):
+    df = df.copy()
+    df = df.drop(columns=["encounter_id", "patient_nbr"])
     return df
 
 def testing(PATH, MISSING_SYMBOL):
@@ -76,13 +81,18 @@ def testing(PATH, MISSING_SYMBOL):
     print("--------------------------")
     print(report)
     df = remove_main(df)
+    df = remove_discharge_records(df)
+    df = remove_duplicates(df)
     df = replace_missing(df)
+    df = drop_id_columns(df)
+
     df = fill_mode(df, "race")
     df = fill_mode(df, "diag_1")
     df = fill_mode(df, "diag_2")
     df = fill_mode(df, "diag_3")
-    df = remove_discharge_records(df)
     df = fill_unknown(df, "medical_specialty")
+
+
     report2 = audit_missing(df)
     print("--------------------------")
     print("Report new results after removal")
