@@ -24,17 +24,55 @@ def audit_missing(df):
             "total_missing"   : num_missing,
             "%_missing" : percent_missing
         })
-    report = pd.DataFrame(records)
-    report.query("total_missing > 1")
-    report.sort_values("%_missing", ascending=False)
-    report.reset_index(drop=True)
+    report = (
+        pd.DataFrame(records)
+        .query("total_missing > 1")
+        .sort_values("%_missing", ascending=False)
+        .reset_index(drop=True)
+    )
     return report
 
 def remove_main(df):
     df = df.copy()
-    cols_dropped = ["weight", "max_glu_serum", "A1Cresult", "payer_code", "medical_specialty"]
+    cols_dropped = ["weight", "max_glu_serum", "A1Cresult", "payer_code"]
     df = df.drop(columns=cols_dropped)
     return df
+
+def replace_missing(df):
+    df = df.copy()
+    df = df.replace(MISSING_SYMBOL, np.nan)
+    return df
+
+def fill_mode(df, col_name):
+    df = df.copy()
+    mode_val = df[col_name].mode()[0]
+    df[col_name] = df[col_name].fillna(mode_val)
+    return df
+
+def remove_duplicates(df):
+    df = df.sort_values("encounter_id")
+    df = df.drop_duplicates("patient_nb", keep = "first")
+    return df
+
+def testing(PATH, MISSING_SYMBOL):
+    df = load(PATH)
+    report = audit_missing(df)
+    df = remove_main(df)
+    df = replace_missing(df)
+    df = fill_mode(df, "race")
+    df = fill_mode(df, "diag_1")
+    df = fill_mode(df, "diag_2")
+    df = fill_mode(df, "diag_3")
+    report2 = audit_missing(df)
+    return df
+
+
+df = testing(PATH)
+
+
+
+
+
 
 
 
