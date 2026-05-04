@@ -6,11 +6,11 @@ Group 20: Niki Liao, Javi Garcia, Adrian Serrano, Jackson Adams
 
 ## About
 
-In this project, we will prediciting if a diabetic patient will need to be readmitted to the hospital within 30 days after beign discharge.  We use a dataset from the UCI Machine Learning Repository and compare four classification models which includes logistic regression, random forest, K-nearest neighbors and XGBoost.
+In this project, we will prediciting if a diabetic patient will need to be readmitted to the hospital within 30 days after being discharge.  We use a dataset from the UCI Machine Learning Repository and compare four classification models which includes logistic regression, random forest, K-nearest neighbors and XGBoost.
 
 ## Dataset
 
-The dataset as mentioned abobe is from the UCI Machine Learning Repository and has around 100,000 inpatient records collected across 130 U.S. hospitals over 10 years. Here is the link to the dataset: https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
+The dataset as mentioned above is from the UCI Machine Learning Repository and has around 100,000 inpatient records collected across 130 U.S. hospitals over 10 years. Here is the link to the dataset: https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
 
 ## Environment
 
@@ -20,7 +20,7 @@ For this project we used:
     For OS we used MacOS
     For IDE we used Visual Studio Code with jupyter extension
 
-In additoin to that all the required packages are listed in requirements.txt
+In addition to that all the required packages are listed in requirements.txt
 
 ## How to Run
 
