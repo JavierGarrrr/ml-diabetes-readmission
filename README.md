@@ -59,5 +59,5 @@ Each of us implemented one model:
     Niki: Random Forest
     Javi: K-Nearest Neighbors
     Adrian: Logistic Regression 
-    Jackson: XGBoos
+    Jackson: XGBoost
 
