@@ -24,7 +24,7 @@ In additoin to that all the required packages are listed in requirements.txt
 
 ## How to Run
 
-1. Open the project file on you IDE
+1. Open the project file on your IDE
 
 2. Go to the terminal and create a virtual environment
 
@@ -46,11 +46,11 @@ pip install -r requirements.txt
 
 5. Run the .pynb file and make sure the kernel is set to the venv you created
 
-On VS Code click the kernel picker in the top right of the notebook and select the venv Python interpreter
+   On VS Code click the kernel picker in the top right of the notebook and select the venv Python interpreter
 
 6. Click Run All and all the plots and tables will be generated on the report folder. 
 
-Note: The full run takes about 20-30 minutes depending on your hardware because of the cross-validation and hyperparameter tuning. KNN and XGBoost take the longest
+   Note: The full run takes about 20-30 minutes depending on your hardware because of the cross-validation and hyperparameter tuning. KNN and XGBoost take the longest
 
 ## Models
 
