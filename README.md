@@ -20,7 +20,7 @@ For this project we used:
     For OS we used MacOS
     For IDE we used Visual Studio Code with jupyter extension
 
-In addition to that all the required packages are listed in requirements.txt
+In addition to that all the required packages are listed in the requirements.txt
 
 ## How to Run
 
